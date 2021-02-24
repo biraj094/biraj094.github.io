@@ -118,51 +118,390 @@
     </div>
   </nav>
 <section class="section is-medium">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-centered-tablet-portrait">
-              <h1 class="title section-title">Blog</h1>
-              <h5 class="subtitle is-5 is-muted"></h5>
-              <div class="divider"></div>        
-              <div class="section is-medium">
-                <div class="container"><div class="columns"></div>
-                          <div class="columns"><div class="column is-4">
-    <div class="box">
-      <figure class="image is-3by2">
-        <a href="/blog/01.contact-card/"><img src="/blog/01.contact-card/cover1_hu37f88119bb88d50a62cf30a7c95a3554_37218_600x0_resize_q75_box.jpg" alt=""></a>
-      </figure>
-      <h3 class="title is-5 refresh-summary-title">
-        Your first flask project.
-      </h3>
-      <p class="refresh-summary">Learn to create simple web application implementing interesting features of flask.</p> 
-      <div class="action has-text-right">
-        <a href="/blog/01.contact-card/" class="button is-primary">
-                Read More
-            </a>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title is-2 section-title">Gerontocracy</h1>
+        <h5 class="subtitle is-5 is-muted"></h5>
+        <div class="divider"></div>
+        
+        <section class="section content has-text-justified">
+          <p>With the recent dissolution of parliament quashed by the supreme court and the incessant political unrest in the nation,I was trying to rationalize how we ended up in this predicament.</p>
+<p>To unravel my curiosity, I headed over to the official website of the prime minister of Nepal to take a look at the council of ministers. However,the website didnt have sufficient information but I was motivated to dig deep and learn more about the ministers and politicians of Nepal. After browsing through a good number of government websites, I planned to find the age of the politicians.</p>
+<p>I failed to find any reliable source that hosted data for politicians of Nepal. Luckily,I found a <a href="https://en.wikipedia.org/wiki/List_of_Nepalese_politicians">Wikipedia page</a> that listed politicians of Nepal. So, scraping the data from Wikipedia was my best bet. The link to the repository that scrapes the age is here.</p>
+<p>Caveat: The final list only accounts for the politicians that are alive. Also, the list fails to capture all of the politician. I was able to retrieve information of a mere 54 politician.</p>
+<p>Surprisingly, a few important thing can be infered from this small sample.</p>
+<p>The youngest politician is Ranju Darshana aged 24 while the oldest politician is Khadgajeet Baral aged 92. The mean age of politicians is 63 (rounded from 62.87). It is interesting to note that <b>Senior Citizen Act of Nepal 2006</b> defines “Senior Citizen” as a citizen of Nepal having completed the age of Sixty years. This certainly proves that Nepal has been a gerontocracy.</p>
+<p>The Global Parliamentary Report by UNDP highlights that a global average age of a Member of Parliament (MP) as 53. The average age for a woman MP is 50. Sub-Saharan African MPs have the lowest regional average age at 49 with Arab countries with the highest at 55. The average age of Nepali politician (i.e 63) is higher than any other nation.</p>
+<p>The sample data validates that Nepali youth have a lot of barriers to pursue politics.The old generation must step up and be mindful to teach their subordinates. [Add things about arab spring and how youth can make a difference.]</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DOB</th>
+      <th>DOD</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bhim Acharya</td>
+      <td>1959-04-27</td>
+      <td></td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <td>Mahesh Acharya</td>
+      <td>1954-08-06</td>
+      <td></td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <td>Narahari Acharya</td>
+      <td>1953-09-27</td>
+      <td></td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <td>Dilendra Prasad Badu</td>
+      <td>1954-01-09</td>
+      <td></td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <td>Khadgajeet Baral</td>
+      <td>1928-04-17</td>
+      <td></td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Shakti Bahadur Basnet</td>
+      <td>1971-04-14</td>
+      <td></td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <td>Damodar Bhandari</td>
+      <td>1973-11-05</td>
+      <td></td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <td>Dev Raj Bhar</td>
+      <td>1952-01-29</td>
+      <td></td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Lekh Raj Bhatta</td>
+      <td>1960-03-24</td>
+      <td></td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>Baburam Bhattarai</td>
+      <td>1954-06-18</td>
+      <td></td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <td>Narayan Man Bijukchhe</td>
+      <td>1939-03-09</td>
+      <td></td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>Khadga Bahadur Bishwakarma</td>
+      <td>1968-05-17</td>
+      <td></td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <td>Nar Bahadur Chand</td>
+      <td>1962-08-29</td>
+      <td></td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <td>Ranju Darshana</td>
+      <td>1996-03-03</td>
+      <td></td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>Arzu Rana Deuba</td>
+      <td>1962-01-26</td>
+      <td></td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <td>Sher Bahadur Deuba</td>
+      <td>1946-09-12</td>
+      <td></td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>Bam Dev Gautam</td>
+      <td>1948-07-09</td>
+      <td></td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Kul Bahadur Gurung</td>
+      <td>1935-11-23</td>
+      <td></td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Tek Bahadur Gurung</td>
+      <td>1954-11-26</td>
+      <td></td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>Anil Kumar Jha</td>
+      <td>1967-09-30</td>
+      <td></td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <td>Govinda Raj Joshi</td>
+      <td>1949-08-12</td>
+      <td></td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td>Nabindra Raj Joshi</td>
+      <td>1964-01-08</td>
+      <td></td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <td>Ram Karki</td>
+      <td>1956-10-16</td>
+      <td></td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Sushila Karki</td>
+      <td>1952-06-07</td>
+      <td></td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Narayan Khadka</td>
+      <td>1949-03-20</td>
+      <td></td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td>Jhala Nath Khanal</td>
+      <td>1950-05-20</td>
+      <td></td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>Shekhar Koirala</td>
+      <td>1950-08-25</td>
+      <td></td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>Krishna Bahadur Mahara</td>
+      <td>1958-06-29</td>
+      <td></td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>Chandra Maharjan</td>
+      <td>1954-11-16</td>
+      <td></td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>Ram Saran Mahat</td>
+      <td>1951-01-01</td>
+      <td></td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>Rajendra Mahato</td>
+      <td>1958-11-19</td>
+      <td></td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <td>Radha Krishna Mainali</td>
+      <td>1946-09-26</td>
+      <td></td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>Salma Khatoon Mikrani</td>
+      <td>1976-01-25</td>
+      <td></td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <td>Madhav Kumar Nepal</td>
+      <td>1953-03-06</td>
+      <td></td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <td>KP Sharma Oli</td>
+      <td>1952-02-22</td>
+      <td></td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Bal Chandra Poudel</td>
+      <td>1959-06-22</td>
+      <td></td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <td>Binda Pandey</td>
+      <td>1966-12-30</td>
+      <td></td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <td>Surendra Pandey</td>
+      <td>1958-08-25</td>
+      <td></td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>Tilak Pariyar</td>
+      <td>1943-10-31</td>
+      <td></td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>Ananta Prasad Paudel</td>
+      <td>1962-07-28</td>
+      <td></td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <td>Bishnu Prasad Paudel</td>
+      <td>1959-11-20</td>
+      <td></td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>Shankar Pokharel</td>
+      <td>1963-02-27</td>
+      <td></td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <td>Sher Dhan Rai</td>
+      <td>1971-02-23</td>
+      <td></td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <td>Lal Bahadur Rawal</td>
+      <td>1963-02-02</td>
+      <td></td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <td>Minendra Rijal</td>
+      <td>1957-10-01</td>
+      <td></td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>Agni Sapkota</td>
+      <td>1958-03-07</td>
+      <td></td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>Prakash Man Singh</td>
+      <td>1956-04-03</td>
+      <td></td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Dal Bahadur Sunar</td>
+      <td>1959-10-01</td>
+      <td></td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <td>Surya Man Dong Tamang</td>
+      <td>1970-04-20</td>
+      <td></td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Gagan Thapa</td>
+      <td>1976-07-16</td>
+      <td></td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <td>Hridayesh Tripathi</td>
+      <td>1959-06-18</td>
+      <td></td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <td>Amod Prasad Upadhyay</td>
+      <td>1936-03-29</td>
+      <td></td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Ram Baran Yadav</td>
+      <td>1948-02-04</td>
+      <td></td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Upendra Yadav</td>
+      <td>1960-12-11</td>
+      <td></td>
+      <td>59</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+        </section>
       </div>
     </div>
-  </div><div class="column is-4">
-    <div class="box">
-      <figure class="image is-3by2">
-        <a href="/blog/02.politician/"><img src="/images/default_summary_hu2be732aee21a2469ead3fe1f2df8caca_2088687_600x0_resize_q75_box.jpg" alt=""></a>
-      </figure>
-      <h3 class="title is-5 refresh-summary-title">
-        Gerontocracy
-      </h3>
-      <p class="refresh-summary">Test</p> 
-      <div class="action has-text-right">
-        <a href="/blog/02.politician/" class="button is-primary">
-                Read More
-            </a>
-      </div>
+  </div>  
+  <div class="container">
+    <div class="columns">
+      <div class="column has-text-right is-family-monospace is-centered-tablet-portrait">
+        Last modified:2 February 2020</div>
     </div>
-  </div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section><footer class="footer footer-dark">
+  </div></section><footer class="footer footer-dark">
   <div class="container">
     <div class="columns">
       <div class="column">
