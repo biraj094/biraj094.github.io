@@ -118,51 +118,79 @@
     </div>
   </nav>
 <section class="section is-medium">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-centered-tablet-portrait">
-              <h1 class="title section-title">python</h1>
-              <h5 class="subtitle is-5 is-muted"></h5>
-              <div class="divider"></div>        
-              <div class="section is-medium">
-                <div class="container"><div class="columns"></div>
-                          <div class="columns"><div class="column is-4">
-    <div class="box">
-      <figure class="image is-3by2">
-        <a href="/blog/politician/"><img src="/blog/politician/test_hu465bad584540ccaefb130242369c2a86_2131223_600x0_resize_box_2.png" alt=""></a>
-      </figure>
-      <h3 class="title is-5 refresh-summary-title">
-        Has Nepal been a gerontocracy?
-      </h3>
-      <p class="refresh-summary">Scrape date of birth and date of death of Nepali Politicians.</p> 
-      <div class="action has-text-right">
-        <a href="/blog/politician/" class="button is-primary">
-                Read More
-            </a>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title is-2 section-title">Your first flask project.</h1>
+        <h5 class="subtitle is-5 is-muted"></h5>
+        <div class="divider"></div>
+        
+        <section class="section content has-text-justified">
+          <p>When I started my journey in Python, the first web framework that I learned was Flask. It was a valuable tool to showcase my projects and create simple simulations and dashboards. One of the starter projects that I did was ‘Contact Card’. This project is a simple web application that allows users to generate a QR code from a text/URL.</p>
+<p><i> <h5> So, what is a QR code? </h5> </i></p>
+<p>QR (Quick Response) codes are two-dimensional matrices that store information scattered across messy lines and chaotic geometric shapes. They come in multiple shapes, sizes, and colors and link to text, marketing campaigns, and business cards. One widespread use case is Snapcodes.</p>
+<br><br>
+<div class="columns is-centered container">
+    <div class="column is-one-third">
+        <figure><img class="rounded-corners" src="/blog/contact_card/snap_hu6e6c2387919543e7d81bcdb8a4b83b22_87968_380x420_resize_q75_box.jpg" 
+                width="380" 
+                height="420"></figure>
+    </div>
+    <div class="column is-one-third">
+        <figure><img class="rounded-corners" src="/blog/contact_card/small_hu8732f3d29b42d07e106121b5e3b0bcb3_1250_380x420_resize_q75_box.jpg" 
+                width="380" 
+                height="420"></figure>
+    </div>
+
+    <div class="column is-one-third">
+        <figure><img class="rounded-corners" src="/blog/contact_card/bar-code_hu30e2fe17a5dbb93ddb1d34c4e93bd2a3_105227_380x420_resize_q75_box.jpg" 
+                width="380" 
+                height="420"></figure>
+    </div>
+</div>
+<p><i><figcaption>The images above show that QR code can be of different types,sizes and color. </figcaption></i></p>
+<br><br>
+<p><i> <h5> And why is the project named Contact Card? </h5> </i></p>
+<p>This project explores a single use-case of QR code - creating your contact information. For example, you may store simple textual details about yourself or add a link that redirects to your bio in LinkedIn/Twitter/Facebook/personal website.</p>
+<p>Here, I would like to explain three features of flask . For the complete code please visit <a href="https://github.com/biraj094/contact_card" target="_blank">Github</a>.</p>
+<br><br>
+<h4 class="subtitle is-4">1. Using dynamic routes</h4>
+
+<p>Dynamic routing is an approach to selecting paths based on real-time changes. For example, say you are creating a route <code>/profile</code>, to show the profile of 50 students in a class. However, the same route can show the personalized profile of each student if we associate a student to an id. We can do so by making our route dynamic.</p>
+<pre><code>@app.route(’/profile/&lt;int:id&gt;’,methods= [’GET’])
+def profile(id):
+ # Create different profile for different user.
+</code></pre><p>Notice how the <code>id</code> parameter is passed to the function <code>profile</code>, implying that personalized information can be returned to the same route.
+Thus, <code>www.example.com/profile/1</code> points to a personalized page for student A, and <code>www.example.com/profile/2</code> points to a personalized page for student B, and so on.</p>
+<p>A similar approach was used to pass the URL that generated the QR code. However, Flask throws an error if the text or the URL contains backslash ‘/’. A workaround for this was <code>/display/path:URL</code>. Specifying the URL as <code>path</code> allowed us to send any URL type to another page without any error.</p>
+<pre><code>@app.route(’/display/&lt;path:url&gt;’,methods=[’POST’,’GET’]) 
+</code></pre><br>
+<h4 class="subtitle is-4">2. Returning file object</h4>
+
+<p>It is not necessary to render a template for each route. You can return any file you wish using <code>send_file</code>. I have added a feature to download the QR image as an attachment when <code>/download</code> route is called for this project. The name and type of the file must be added.</p>
+<pre><code>return send_file(str_io,
+                attachment_filename=”my_image.png”,
+                mimetype=’image/png’,
+                as_attachment=True)
+</code></pre><p>The type of file you wish to return is specified in the mime-type attribute. The image, “my_image.png” is converted to a string object. Since the <code>as_attachment</code> is set to <code>True</code>, the file is downloaded.</p>
+<br><br>
+<h4 class="subtitle is-4">3. Temporary storage of files</h4>
+
+<pre><code> with NamedTemporaryFile(delete=True) as tmp:
+    qrimage.save(tmp.name)
+    str_io = io.BytesIO(tmp.read())
+</code></pre><p><code>NamedTemporaryFile</code>  is used to return a file-type object which can be stored temporarily. For example, the QR object is saved using a temporary name and is converted to an IO object. Since I just wanted to display the picture and not store it in the project directory, I set the <code>delete</code> parameter to <code>True</code> .The <code>BytesIO</code> object is just a chunk of memory that behaves like a file.</p>
+
+        </section>
       </div>
     </div>
-  </div><div class="column is-4">
-    <div class="box">
-      <figure class="image is-3by2">
-        <a href="/blog/contact_card/"><img src="/blog/contact_card/cover1_hu37f88119bb88d50a62cf30a7c95a3554_37218_600x0_resize_q75_box.jpg" alt=""></a>
-      </figure>
-      <h3 class="title is-5 refresh-summary-title">
-        Your first flask project.
-      </h3>
-      <p class="refresh-summary">Learn to create simple web application implementing interesting features of flask.</p> 
-      <div class="action has-text-right">
-        <a href="/blog/contact_card/" class="button is-primary">
-                Read More
-            </a>
-      </div>
+  </div>  
+  <div class="container">
+    <div class="columns">
+      <div class="column has-text-right is-family-monospace is-centered-tablet-portrait">
+        Last modified:7 October 2021</div>
     </div>
-  </div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section><footer class="footer footer-dark">
+  </div></section><footer class="footer footer-dark">
   <div class="container">
     <div class="columns">
       <div class="column">
